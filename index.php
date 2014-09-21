@@ -20,11 +20,7 @@
   		</div>
   	</div>
   	<div class="row">
-			<div class="col-md-4">
-				<h3 class="ch3">Configuracion</h3>
-				<a href="vuelos.php" class="thumbnail"><img src="icons/vuelos.svg"></a>
-  		</div>
-  		<div class="col-md-4">
+  		<div class="col-md-4 col-md-offset-2">
   			<h3 class="ch3">Configuracion</h3>
 				<a href="vuelos.php" class="thumbnail"><img src="icons/settings.svg"></a>
   		</div>
