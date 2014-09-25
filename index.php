@@ -16,17 +16,17 @@
   		</div>
   		<div class="col-md-4">
   			<h3 class="ch3">Pantalla</h3>
-  			<a href="vuelos.php" class="thumbnail"><img src="icons/screen.svg"></a>
+  			<a href="screen.php" class="thumbnail"><img src="icons/screen.svg"></a>
   		</div>
   	</div>
   	<div class="row">
   		<div class="col-md-4 col-md-offset-2">
   			<h3 class="ch3">Configuracion</h3>
-				<a href="vuelos.php" class="thumbnail"><img src="icons/settings.svg"></a>
+				<a href="config.php" class="thumbnail"><img src="icons/settings.svg"></a>
   		</div>
   		<div class="col-md-4">
   			<h3 class="ch3">Salir</h3>
-  			<a href="vuelos.php" class="thumbnail"><img src="icons/salir.svg"></a>
+  			<a href="logout.php" class="thumbnail"><img src="icons/salir.svg"></a>
   		</div>
   	</div>
 	</div>
