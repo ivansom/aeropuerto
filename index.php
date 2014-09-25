@@ -12,7 +12,7 @@
       </div>
   		<div class="col-md-4">
   			<h3 class="ch3">Registro</h3>
-				<a href="vuelos.php" class="thumbnail"><img src="icons/registro.svg"></a>
+				<a href="register.php" class="thumbnail"><img src="icons/registro.svg"></a>
   		</div>
   		<div class="col-md-4">
   			<h3 class="ch3">Pantalla</h3>
