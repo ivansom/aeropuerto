@@ -2,16 +2,16 @@
 	// expresiones regulares para Script lista_vuelos
     $listVueloIni = "#<lista_vuelos>#";
 	$listVueloFin = "#</lista_vuelos>#";
-	$Aerolinea = "#<aerolinea>[a-zA-z]+</aerolinea>#";
+	$Aerolinea = "#(<aerolinea>)([a-zA-z]+)(</aerolinea>)#";
 	$vuelo = "#<vuelo>#";
 	$finVuelo = "#</vuelo>#";
-	$numero = "#<numero>[0-9]+</numero>#";
-	$fecha = "#<fecha>2014[0-9]+</fecha>#";
-	$origen = "#<origen>[A-Z]{3}</origen>#";
-	$destino = "#<destino>[A-Z]{3}</destino>#";
-	$hora = "#<hora>[0-2][0-9]:[0-5][0-9]</hora>#";
-	$precio = "#<precio>[0-9]+</precio>#";
-	$status = "#<status>[1-3]</status>#";
+	$numero = "#(<numero>)([0-9]+)(</numero>)#";
+	$fecha = "#(<fecha>)(2014[0-1]([0-9]|[0-2])[0-3][0-9])(</fecha>)#";
+	$origen = "#(<origen>)([A-Z]{3})(</origen>)#";
+	$destino = "#(<destino>)([A-Z]{3})(</destino>)#";
+	$hora = "#(<hora>)([0-2][0-9]:[0-5][0-9])(</hora>)#";
+	$precio = "#(<precio>)([0-9]+)(</precio>)#";
+	$status = "#(<status>)([1-3])(</status>)#";
 	
 	//Arreglo de expresiones regulares
 	$expresion = array(0 => $listVueloIni, 
@@ -45,11 +45,7 @@
 		        		
 		        		case '1':
 		        			//Codigo de la Aerolinea
-		        			$Flight = array(0 => $matches[0]);
-		        			break;
-
-		        		case '2':
-		        			//empieza el vuelo
+		        			$Flight = array(0 => $matches[0s]);
 		        			break;
 
 						case '3':
@@ -89,20 +85,14 @@
 		        		case '10':
 		        			//ingresar el vuelo en la lindek list
 		        			$FlightList->push($Flight);
-		        			break;
-		        		
-		        		case '11':
-		        			//se termina de llenar la linked list de los vuelos
-		        			print_r($FlightList);
-		        			break;	        		
-		        		}
-
-		        	}        	
+		        			break;        		
+		        	}
+		        }        	
 	    	}
 	    }
 	} else {
-	    // error opening the file.
-	} 
+    	// error opening the file.
+	} 	
 
 	fclose($handle);
 ?>
