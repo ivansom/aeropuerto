@@ -1,0 +1,41 @@
+<lista_vuelos>
+	<aerolinea>TACA</aerolinea>
+	<vuelo>
+		<numero>777</numero>
+		<fecha>20140928</fecha>
+		<origen>GUA</origen>
+		<destino>MIA</destino>
+		<hora>16:00</hora>
+		<precio>200</precio>
+		<status>1</status>
+	</vuelo>
+<vuelo>
+		<numero>888</numero>
+		<fecha>20141028</fecha>
+		<origen>HON</origen>
+		<destino>COR</destino>
+		<hora>20:00</hora>
+		<precio>500</precio>
+		<status>3</status>
+	</vuelo>
+<vuelo>
+		<numero>999</numero>
+		<fecha>20141010</fecha>
+		<origen>GUA</origen>
+		<destino>ARG</destino>
+		<hora>05:00</hora>
+		<precio>500</precio>
+		<status>2</status>
+	</vuelo>
+	<aerolinea>COPA</aerolinea>
+<vuelo>
+		<numero>1000</numero>
+		<fecha>20140930</fecha>
+		<origen>HON</origen>
+		<destino>COR</destino>
+		<hora>02:00</hora>
+		<precio>500</precio>
+		<status>3</status>
+	</vuelo>
+
+</lista_vuelos>

@@ -2,8 +2,6 @@
 	include 'include/_header.html';
 	include 'layouts/navbar.html';
 ?>
-
-
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
@@ -30,6 +28,5 @@
   		</div>
   	</div>
 	</div>
-
 
 <?php include 'include/_footer.html' ?>
