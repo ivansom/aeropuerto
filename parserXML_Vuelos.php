@@ -4,8 +4,8 @@
 	$listVueloFin = "#</lista_vuelos>#";
 	$Aerolinea = "#(<aerolinea>)([a-zA-z]+)(</aerolinea>)#";
 	$vuelo = "#<vuelo>#";
-	$finVuelo = "#</vuelo>#";
-	$numero = "#(<numero>)([0-9]+)(</numero>)#";
+	$finVuelo = "#(</vuelo>)#";
+	$numero = "#(<numero>)()([0-9]+)(</numero>)#";
 	$fecha = "#(<fecha>)(2014[0-1]([0-9]|[0-2])[0-3][0-9])(</fecha>)#";
 	$origen = "#(<origen>)([A-Z]{3})(</origen>)#";
 	$destino = "#(<destino>)([A-Z]{3})(</destino>)#";
@@ -45,12 +45,12 @@
 		        		
 		        		case '1':
 		        			//Codigo de la Aerolinea
-		        			$Flight = array(0 => $matches[0s]);
+		        			$Flight = array(0 => $matches[2]);
 		        			break;
 
 						case '3':
-		        			//fecha
-		        			$Flight[1] = $matches[2];
+		        			//numero
+		        			$Flight[1] = $matches[3];
 		        			break;
 
 						case '4':
@@ -85,7 +85,10 @@
 		        		case '10':
 		        			//ingresar el vuelo en la lindek list
 		        			$FlightList->push($Flight);
-		        			break;        		
+		        			break;
+		        		case '11':
+		        			print_r($FlightList);
+		        		break;		
 		        	}
 		        }        	
 	    	}

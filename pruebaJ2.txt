@@ -1,7 +1,7 @@
 {"lista_pasajeros":{
 	"aerolinea":"TACA",
 	"numero":"777",
-	"fecha": "20140928"
+	"fecha":"20140928",
 	"origen":"GUA",
 	"destino":"MIA",
 	"avion":"GUA01",

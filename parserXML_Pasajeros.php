@@ -6,9 +6,9 @@
 	$fecha = "#(<fecha>)(2014[0-1]([0-9]|[0-2])[0-3][0-9])(</fecha>)#";
 	$origen = "#(<origen>)([A-Z]{3})(</origen>)#";
 	$destino = "#(<destino>)([A-Z]{3})(</destino>)#";
-	$avion = "#(<avion>)([A-Z]|[0-9])+(</avion>)#";
+	$avion = "#(<avion>)(([A-Z]|[0-9])+)(</avion>)#";
 	$IniPaseng = "#<pasajero>#";
-	$boleto = "#(<boleto>)([a-zA-z]|[0-9])+(</boleto>)#";
+	$boleto = "#(<boleto>)()([a-zA-z]|[0-9])+(</boleto>)#";
 	$nombre = "#(<nombre>)([a-zA-z]+)(</nombre>)#";
 	$asiento =	"#(<asiento>)([0-9]{2})(</asiento>)#";
 	$FinPasen = "#</pasajero>#";
@@ -45,31 +45,31 @@
 		        			$PassengerList = new SplDoublyLinkedList();
 		        			break;
 		        		case '1':
-		        			$Passengers = array(0 => $matches[0]);
+		        			$Passengers = array(0 => $matches[2]);
 		        			break;
 		        		case '2':
-		        			$Passengers[1] = $matches[0];
+		        			$Passengers[1] = $matches[2];
 		        			break;
 		        		case '3':
-		        			$Passengers[2] = $matches[0];
+		        			$Passengers[2] = $matches[2];
 		        			break;
 		        		case '4':
-		        			$Passengers[3] = $matches[0];
+		        			$Passengers[3] = $matches[2];
 		        			break;
 		        		case '5':
-		        			$Passengers[4] = $matches[0];
+		        			$Passengers[4] = $matches[2];
 		        			break;
 		        		case '6':
-		        			$Passengers[5] = $matches[0];
+		        			$Passengers[5] = $matches[2];
 		        			break;
 		        		case '8':
-		        			$Passengers[6] = $matches[0];
+		        			$Passengers[6] = $matches[3];
 		        			break;
 		        		case '9':
-		        			$Passengers[7] = $matches[0];
+		        			$Passengers[7] = $matches[2];
 		        			break;
 		        		case '10':
-		        			$Passengers[8] = $matches[0];
+		        			$Passengers[8] = $matches[2];
 		        			break;
 		        		case '11':
 		        			$PassengerList->push($Passengers);
