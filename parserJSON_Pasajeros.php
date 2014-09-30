@@ -8,9 +8,9 @@
     $destino = "#(\"destino\")(:)(\")([A-Z]{3})(\")(,)#";
     $avion = "#(\"avion\")(:)(\")(([A-Z]|[0-9])+)(\")(,)#";
 	$pasajeros = "#(\"pasajeros\")(:)(\[)#";
-	$boleto = "#(\{)(\"boleto\")(:)(\")([a-zA-z]|[0-9])+(\")(,)#";
+	$boleto = "#(\{)(\"boleto\")(:)(\")(([a-zA-z]|[0-9])+)(\")(,)#";
 	$nombre = "#(\"nombre\")(:)(\")([a-zA-z]+)(\")(,)#";
-	$asiento =	"#(\"asiento\")(:)(\")([0-9]{2})(\")(\})(,)?#";
+	$asiento =	"#(\"asiento\")(:)(\")([0-9]{2})(\")(\})(,?)#";
 	$FinPasan = "#(\])#";
     $FinListP = "#(\})(\})#";
 	
@@ -33,6 +33,7 @@
 
 	//Se empieaza a leer el archivo
 	$handle = fopen("C:\wamp\www\aeropuerto\pruebaJ2.txt", "r");
+	$cont = 0;
 	
 	if ($handle) {
 	    while (($line = fgets($handle)) !== false) {
@@ -63,16 +64,24 @@
 		        			$Pasanger[5] = $matches[4];
 		        			break; 
 		        		case '8':
-		        			$Pasanger[6] = $matches[4];		        			
+		        			$Pasanger[6] = $matches[5];	
+		        			if ($matches[1] == "{") {
+		        				$cont += 1;
+		        			}	        			
 		        			break;
 		        		case '9':
 		        			$Pasanger[7] = $matches[4];
 		        			break;
 		        		case '10':
 		        			$Pasanger[8] = $matches[4];
+		        			if ($matches[6] == "}") {
+		        				$cont += 1;
+		        				$doPush = ($cont % 2);
+		        				if ($doPush == 0)
+		        					$PassangerList->push($Pasanger);
+		        			}
 		        			break;
 		        		case '11':
-		        			$PassangerList->push($Pasanger);
 		        			print_r($PassangerList);
 		        			break;	
 		        	}

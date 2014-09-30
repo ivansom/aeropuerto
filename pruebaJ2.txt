@@ -8,7 +8,11 @@
 	"pasajeros":[
 		{"boleto":"12345",
 		"nombre":"Juan",
-		"asietno":"17"},
+		"asiento":"17"},
+		{"boleto":"001",
+		"nombre":"Ivan",
+		"asiento":"18"}
+
 		]
 	}
 }

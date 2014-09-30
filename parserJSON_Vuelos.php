@@ -32,7 +32,8 @@
 
 	//Se empieaza a leer el archivo
 	$handle = fopen("C:\wamp\www\aeropuerto\pruebaJ.txt", "r");
-	
+	$cont = 0;
+
 	if ($handle) {
 	    while (($line = fgets($handle)) !== false) {
 	        for ($i=0; $i < 12; $i++) {
@@ -48,6 +49,9 @@
 		        			break; 
 		        		case '3':
 		        			$Flight[1] = $matches[5];
+		        			if ($matches[1] == "{") {
+		        				$cont += 1;
+		        			}
 		        			break; 		        		
 		        		case '4':
 		        			$Flight[2] = $matches[4];
@@ -66,9 +70,14 @@
 		        			break;
 		        		case '9':
 		        			$Flight[7] = $matches[4];
+		        			if ($matches[6] == "}") {
+		        				$cont += 1;
+		        				$doPush = ($cont % 2);
+		        				if ($doPush == 0)
+		        					$PassangerList->push($Pasanger);
+		        			}
 		        			break;
 		        		case '10':
-		        			$FlightList->push($Flight);
 		        			print_r($FlightList);
 		        			break;		 
 		        	}
