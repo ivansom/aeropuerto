@@ -9,7 +9,7 @@
     $destino = "#(\"destino\")(:)(\")([A-Z]{3})(\")(,)#";
     $hora = "#(\"hora\")(:)(\")([0-2][0-9]:[0-5][0-9])(\")(,)#";
     $precio = "#(\"precio\")(:)(\")([0-9]+)(\")(,)#";
-    $status = "#(\"status\")(:)(\")([1-3])(\")(,)?#";
+    $status = "#(\"status\")(:)(\")([1-3])(\")(\})(,)?#";
     $FinVuelos = "#(\])#";
     $FinListV = "#(\})(\})#";
 
@@ -46,9 +46,6 @@
 		        		case '1':
 		        			$Flight = array(0 => $matches[4]);
 		        			break; 
-		        		case '2':
-		        			//nose que poner
-		        			break; 
 		        		case '3':
 		        			$Flight[1] = $matches[5];
 		        			break; 		        		
@@ -80,7 +77,6 @@
 	    }
 	} else {
 	    // error opening the file.
-	    echo "No entro";
 	} 
 
 	fclose($handle);
