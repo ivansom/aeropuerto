@@ -1,15 +1,15 @@
 <?php 
 	// expresiones regulares para Script listado_pasajeros
     $InitVuelos = "#(\{)(\"lista\_vuelos\")(\:\{)#";
-    $aerolinea = "#(\"aerolinea\")(:)(\"[A-Z]+\")(,)#";
+    $aerolinea = "#(\"aerolinea\")(:)(\")([A-Z]+)(\")(,)#";
     $vuelos = "#(\"vuelos\")(:)(\[)#";
     $numero = "#(\{)(\"numero\")(:)(\")([0-9]+)(\")(,)#";
-    $fecha = "#(\"fecha\")(:)(\"2014[0-1]([0-9]|[0-2])[0-3][0-9]\")(,)#";
-    $origen = "#(\"origen\")(:)(\"[A-Z]{3}\")(,)#";
-    $destino = "#(\"destino\")(:)(\"[A-Z]{3}\")(,)#";
-    $hora = "#(\"hora\")(:)(\"[0-2][0-9]:[0-5][0-9]\")(,)#";
-    $precio = "#(\"precio\")(:)(\"[0-9]+\")(,)#";
-    $status = "#(\"status\")(:)(\"[1-3]\")(,)?#";
+    $fecha = "#(\"fecha\")(:)(\")(2014[0-1]([0-9]|[0-2])[0-3][0-9])(\")(,)#";
+    $origen = "#(\"origen\")(:)(\")([A-Z]{3})(\")(,)#";
+    $destino = "#(\"destino\")(:)(\")([A-Z]{3})(\")(,)#";
+    $hora = "#(\"hora\")(:)(\")([0-2][0-9]:[0-5][0-9])(\")(,)#";
+    $precio = "#(\"precio\")(:)(\")([0-9]+)(\")(,)#";
+    $status = "#(\"status\")(:)(\")([1-3])(\")(,)?#";
     $FinVuelos = "#(\])#";
     $FinListV = "#(\})(\})#";
 
@@ -35,41 +35,40 @@
 	
 	if ($handle) {
 	    while (($line = fgets($handle)) !== false) {
-	        for ($i=0; $i < 11; $i++) {
+	        for ($i=0; $i < 12; $i++) {
 	        	$pattern = $expresion[$i];
-	        	$match = preg_match($pattern, $line, $matches);
-	        	if ($match == 1) {
+	        	if (preg_match($pattern, $line, $matches) === 1) {
 	        		switch ($i) {
 		        		case '0':
 		        			//contruir la linked list
 		        			$FlightList = new SplDoublyLinkedList();
 		        			break;       		
 		        		case '1':
-		        			$Flight = array(0 => $matches[3]);
+		        			$Flight = array(0 => $matches[4]);
 		        			break; 
 		        		case '2':
 		        			//nose que poner
 		        			break; 
 		        		case '3':
-		        			$Flight[1] = $matches[4];
+		        			$Flight[1] = $matches[5];
 		        			break; 		        		
 		        		case '4':
-		        			$Flight[2] = $matches[3];
+		        			$Flight[2] = $matches[4];
 		        			break;
 		        		case '5':
-		        			$Flight[3] = $matches[3];		        					        			
+		        			$Flight[3] = $matches[4];	        					        			
 		        			break;       		
 		        		case '6':
-		        			$Flight[4] = $matches[3];
+		        			$Flight[4] = $matches[4];
 		        			break; 
 		        		case '7':
-		        			$Flight[5] = $matches[3];		        			
+		        			$Flight[5] = $matches[4];	        			
 		        			break; 
 		        		case '8':
-		        			$Flight[6] = $matches[3];		        			
+		        			$Flight[6] = $matches[4];		        			
 		        			break;
 		        		case '9':
-		        			$Flight[7] = $matches[3];
+		        			$Flight[7] = $matches[4];
 		        			break;
 		        		case '10':
 		        			$FlightList->push($Flight);

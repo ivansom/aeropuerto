@@ -50,36 +50,36 @@
 
 						case '3':
 		        			//fecha
-		        			$Flight[1] = $matches[0];
+		        			$Flight[1] = $matches[2];
 		        			break;
 
 						case '4':
 		        			//fecha
-		        			$Flight[2] = $matches[0];
+		        			$Flight[2] = $matches[2];
 		        			break;
 		        		
 		        		case '5':
 		        			//origen
-		        			$Flight[3] = $matches[0];
+		        			$Flight[3] = $matches[2];
 		        			break;
 
 		        		case '6':
 		        			//destino
-		        			$Flight[4] = $matches[0];
+		        			$Flight[4] = $matches[2];
 		        			break;
 		        		
 		        		case '7':
 		        			//hora
-		        			$Flight[5] = $matches[0];
+		        			$Flight[5] = $matches[2];
 		        			break;
 		        		case '8':
 		        			//precio
-		        			$Flight[6] = $matches[0];
+		        			$Flight[6] = $matches[2];
 		        			break;
 		        		
 		        		case '9':
 		        			//status
-		        			$Flight[7] = $matches[0];
+		        			$Flight[7] = $matches[2];
 		        			break;
 
 		        		case '10':
