@@ -11,7 +11,7 @@
 	$boleto = "#(<boleto>)()([a-zA-z]|[0-9])+(</boleto>)#";
 	$nombre = "#(<nombre>)([a-zA-z]+)(</nombre>)#";
 	$asiento =	"#(<asiento>)([0-9]{2})(</asiento>)#";
-	$FinPasen = "#</pasajero>#";
+	$FinPasen = "#(</pasajero>)((</lista_pasajeros>)?)((<pasajero>)?)#";
 	$FinListPasen = "#</lista_pasajeros>#";
 	
 	//Arreglo de expresiones regulares

@@ -4,7 +4,7 @@
 	$listVueloFin = "#</lista_vuelos>#";
 	$Aerolinea = "#(<aerolinea>)([a-zA-z]+)(</aerolinea>)#";
 	$vuelo = "#<vuelo>#";
-	$finVuelo = "#(</vuelo>)#";
+	$finVuelo = "#(</vuelo>)((</lista_vuelos>)?)((<vuelo>)?)#";
 	$numero = "#(<numero>)()([0-9]+)(</numero>)#";
 	$fecha = "#(<fecha>)(2014[0-1]([0-9]|[0-2])[0-3][0-9])(</fecha>)#";
 	$origen = "#(<origen>)([A-Z]{3})(</origen>)#";
@@ -25,7 +25,7 @@
 					8 => $precio,
 					9 => $status,
 					10 => $finVuelo,
-					11 => $listVueloFin,
+					11 => $listVueloFin
 	);
 
 

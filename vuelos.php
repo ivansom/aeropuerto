@@ -5,10 +5,10 @@
 
 	<div class="container">
 	<ol class="breadcrumb">
-  <li><a class="bluelink" href="index.php">Home</a></li>
-  <li class="active">Vuelos</li>
+  <li><a class="bluelink" href="/aeropuerto/">Home</a></li>
+  <li class="active">Flights </li>
 </ol>
-	<h2 class="ch3"> Vuelos </h2>
+	<h2 class="ch3"> Flights </h2>
 
 	<hr />
 	<div class="panel panel-default">
@@ -43,61 +43,21 @@
 		</ul>
 
 		<div class="tab-content">
-		<div class="tab-pane active" id="arrivals">
-  	<table class="table ">
-  	<thead>
-  	<tr>
-  	<th>Numero</th>
-    <th>Fecha</th>
-    <th>Origen</th>
-    <th>Destino</th>
-  	<th>Hora</th>
-  	<th>Status</th>
-  	</tr>
-  	</thead>
-  	<tbody>
-    	<tr>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td> 
-    <td>94</td>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-  </tr>
-  </tbody>
-  </table>
-  </div>
+    <div class="tab-pane active" id="arrivals">
+    <table class="table table-hover tablex">
+		<?php 
+      $type = 1;
+      include './bin/get_arrivals.php';
+    ?>
+    </table>
+    </div>
 
   <div class="tab-pane" id="departures">
-  	<table class="table">
-  	<thead>
-  	<tr>
-  	<th>Numero</th>
-    <th>Fecha</th>
-    <th>Origen</th>
-    <th>Destino</th>
-  	<th>Hora</th>
-  	<th>Status</th>
-  	</tr>
-  	</thead>
-  	<tbody>
-    	<tr>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-  </tr>
-  </tbody>
+  <table class="table table-hover tablex">
+  	<?php 
+     
+      include './bin/get_departures.php';
+    ?>
   </table>
   </div>
 
