@@ -73,10 +73,7 @@
 		        			break;
 		        		case '11':
 		        			$PassengerList->push($Passengers);
-		        			break;
-		        		case '12':
-		        			print_r($PassengerList);
-		        			break;        		
+		        			break;      		
 		        	}
 		        }        	
 	    	}

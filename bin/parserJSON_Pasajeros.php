@@ -81,9 +81,6 @@
 		        					$PassangerList->push($Pasanger);
 		        			}
 		        			break;
-		        		case '11':
-		        			print_r($PassangerList);
-		        			break;	
 		        	}
 		        }       	
 	    	}

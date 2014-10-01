@@ -85,10 +85,7 @@
 		        		case '10':
 		        			//ingresar el vuelo en la lindek list
 		        			$FlightList->push($Flight);
-		        			break;
-		        		case '11':
-		        			print_r($FlightList);
-		        		break;		
+		        			break;		
 		        	}
 		        }        	
 	    	}

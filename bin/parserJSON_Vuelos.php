@@ -76,9 +76,6 @@
 		        				if ($doPush == 0)
 		        					$FlightList->push($Flight);
 		        			}
-		        			break;
-		        		case '10':
-		        			print_r($FlightList);
 		        			break;		 
 		        	}
 		        }       	
